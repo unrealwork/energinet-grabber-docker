@@ -1,12 +1,11 @@
-
-FROM ubuntu:14.04
+FROM java
 MAINTAINER ATSD Developers <dev-atsd@axibase.com>
 #metadata
 LABEL com.axibase.vendor="Axibase Corporation" \
     com.axibase.product="Energinet Grabber"
 
 #install maven java and phantomjs
-RUN apt-get update && apt-get install --no-install-recommends -y git-core maven wget openjdk-7-jdk\
+RUN apt-get update && apt-get install --no-install-recommends -y git-core maven wget \
     && mkdir /start \
     && rm -rf /var/lib/apt/lists/*
 

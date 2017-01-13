@@ -11,12 +11,11 @@ RUN apt-get update && apt-get install --no-install-recommends -y git-core maven 
     && rm -rf /var/lib/apt/lists/*
 
 ADD files/ /start
-#install collector
 
-VOLUME ["/opt/energinet-grabber"]
+# add install scripts
 
 ADD entrypoint.sh /start
 RUN chmod +x /start/*
 RUN /start/install_phantomjs.sh
 RUN /start/install_energinet_grabber.sh
-ENTRYPOINT ["/bin/bash","/scripts/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","/start/entrypoint.sh"]

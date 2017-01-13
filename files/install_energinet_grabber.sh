@@ -4,6 +4,6 @@ git clone https://github.com/unrealwork/engrginet-grabber.git \
     && cd engrginet-grabber/ \
     && mvn clean package \
     && mkdir /opt/energinet-grabber \
-    && tar -xzf target/energinet-grabber-*.tar.gz -C /opt/energinet-grabber --strip 1 \
-    && cd .. \
-    && rm -rf enrrginet-grabber
+    && tar -xvf target/energinet-grabber-0.0.2-bin.tar.gz --strip 1 -C /opt/energinet-grabber \
+    && rm -rf ../engrginet-grabber \
+    && ls /opt/energinet-grabber
